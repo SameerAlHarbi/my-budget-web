@@ -1,0 +1,14 @@
+.app-title {
+    min-height: 20px;
+    padding:20px;
+}
+
+nav-item {
+    background-color: white;
+}
+
+h2 {
+    color: rgb(108, 112, 104);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-shadow: 3px 2px 8px rgb(173, 190, 178);
+}
