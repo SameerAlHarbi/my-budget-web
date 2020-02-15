@@ -12,6 +12,7 @@ import { ContactComponent } from './contact/contact.component';
 import { BeneficiariesComponent } from './beneficiaries/beneficiaries.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { RelationsComponent } from './relations/relations.component';
+import { BanksComponent } from './banks/banks.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { RelationsComponent } from './relations/relations.component';
     ContactComponent,
     BeneficiariesComponent,
     ErrorPageComponent,
-    RelationsComponent
+    RelationsComponent,
+    BanksComponent
   ],
   imports: [
     BrowserModule,
