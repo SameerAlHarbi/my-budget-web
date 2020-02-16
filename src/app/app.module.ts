@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,8 @@ import { BeneficiariesComponent } from './beneficiaries/beneficiaries.component'
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { RelationsComponent } from './relations/relations.component';
 import { BanksComponent } from './banks/banks.component';
+import { BanksListComponent } from './banks/banks-list/banks-list.component';
+import { BanksListItemComponent } from './banks/banks-list/banks-list-item/banks-list-item.component';
 
 @NgModule({
   declarations: [
@@ -26,11 +29,14 @@ import { BanksComponent } from './banks/banks.component';
     BeneficiariesComponent,
     ErrorPageComponent,
     RelationsComponent,
-    BanksComponent
+    BanksComponent,
+    BanksListComponent,
+    BanksListItemComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
