@@ -9,12 +9,19 @@ import { BanksService } from '../banks.service';
 })
 export class BanksListComponent implements OnInit {
 
-  banksListItems: BankModel[];
+  banksListItems: BankModel[] = [];
+  isFetching = false;
 
   constructor(private banksService: BanksService) { }
 
   ngOnInit(): void {
-    this.banksListItems = this.banksService.getBanks();
+    this.isFetching = true;
+    console.log(this.isFetching);
+    this.banksService.getBanks()
+      .subscribe(banks => {
+        this.isFetching = false;
+        this.banksListItems = banks;
+      });
   }
 
 }

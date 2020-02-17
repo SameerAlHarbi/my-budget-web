@@ -1,0 +1,7 @@
+li {
+    cursor: pointer;
+}
+
+li:hover {
+    box-shadow: 2px 3px 8px #dad5d5;
+}
