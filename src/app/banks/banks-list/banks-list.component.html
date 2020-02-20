@@ -1,7 +1,13 @@
-<p *ngIf="banksListItems.length < 1 && !isFetching">No Banbks Availables</p>
-<ul class="list-group list-group-flush" 
+<p *ngIf="banksListItems.length < 1 && !isFetching && !error">No Banbks Availables</p>
+<div class="list-group" 
     *ngIf="banksListItems.length >= 1 && !isFetching">
     <app-banks-list-item *ngFor="let bank of banksListItems; let i = index;"
          [bankItem]="bank"></app-banks-list-item>
-</ul>
-<p *ngIf="isFetching"><i class="fas fa-spinner fa-lg fa-spin"></i> Loading...</p>
+</div>
+<p *ngIf="isFetching && !error"><i class="fas fa-spinner fa-lg fa-spin"></i> Please waite...</p>
+<div class="alert alert-danger" style="margin-top: 20px;"
+    *ngIf="error">
+        <h2>An Error Occurred!</h2>
+        <p>{{error}}</p>
+        <button class="btn btn-danger" (click)="onHandleError()">Okay!</button>
+</div>

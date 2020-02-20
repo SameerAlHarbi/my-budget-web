@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +16,8 @@ import { RelationsComponent } from './relations/relations.component';
 import { BanksComponent } from './banks/banks.component';
 import { BanksListComponent } from './banks/banks-list/banks-list.component';
 import { BanksListItemComponent } from './banks/banks-list/banks-list-item/banks-list-item.component';
+import { AuthInterceptorService } from './banks/auth-interceptor.service';
+import { LoggingInterceptorService } from './banks/logging-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,17 @@ import { BanksListItemComponent } from './banks/banks-list/banks-list-item/banks
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoggingInterceptorService,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
