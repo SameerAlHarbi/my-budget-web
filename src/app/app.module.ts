@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,11 +14,10 @@ import { ContactComponent } from './contact/contact.component';
 import { BeneficiariesComponent } from './beneficiaries/beneficiaries.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { RelationsComponent } from './relations/relations.component';
-import { BanksComponent } from './banks/banks.component';
-import { BanksListComponent } from './banks/banks-list/banks-list.component';
-import { BanksListItemComponent } from './banks/banks-list/banks-list-item/banks-list-item.component';
 import { AuthInterceptorService } from './banks/auth-interceptor.service';
 import { LoggingInterceptorService } from './banks/logging-interceptor.service';
+import { AuthComponent } from './auth/auth.component';
+import { BanksModule } from './banks/banks.module';
 
 @NgModule({
   declarations: [
@@ -31,14 +31,14 @@ import { LoggingInterceptorService } from './banks/logging-interceptor.service';
     BeneficiariesComponent,
     ErrorPageComponent,
     RelationsComponent,
-    BanksComponent,
-    BanksListComponent,
-    BanksListItemComponent
+    AuthComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BanksModule,
   ],
   providers: [
     {

@@ -28,9 +28,9 @@ export class BanksListComponent implements OnInit, OnDestroy {
       .subscribe(banks => {
         this.isFetching = false;
         this.banksListItems = banks;
-      }, error => {
+      }, errorRes => {
         this.isFetching = false;
-        this.error = error.message;
+        this.error = errorRes.error.error;
       });
   }
 

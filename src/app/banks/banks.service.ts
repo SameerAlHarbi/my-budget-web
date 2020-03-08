@@ -33,11 +33,12 @@ export class BanksService {
         //Do some operations
         // return responseData.body; in case of observe wase response
         return responseData;
+
       }),
       //in case you have generic error handling task
       catchError(errorRes => {
         //Send to analytic server
-        
+        console.log(errorRes);
         return throwError(errorRes)
       }));
   }

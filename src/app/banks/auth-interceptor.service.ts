@@ -7,7 +7,7 @@ export class AuthInterceptorService implements HttpInterceptor {
 
         console.log(req.url);
 
-        const modifiedRequest = req.clone({headers: req.headers.append('Authorization', '123')});
+        const modifiedRequest = req.clone({headers: req.headers.append('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTYyNDJmZjU2MmExZTAzNTA3ZTI3YzAiLCJuYW1lIjoiQWJ1SnVkZSIsImlhdCI6MTU4MzQ5Nzk4M30.Kq-EIgCVhgVBr5iO-hvaabK7fLASe4NE96fm_eQQsrg')});
 
     //    return next.handle(req);
        return next.handle(modifiedRequest).pipe(tap(event => {
