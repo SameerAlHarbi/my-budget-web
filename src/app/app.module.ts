@@ -18,6 +18,7 @@ import { AuthInterceptorService } from './banks/auth-interceptor.service';
 import { LoggingInterceptorService } from './banks/logging-interceptor.service';
 import { AuthComponent } from './auth/auth.component';
 import { BanksModule } from './banks/banks.module';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { BanksModule } from './banks/banks.module';
     BeneficiariesComponent,
     ErrorPageComponent,
     RelationsComponent,
-    AuthComponent
+    AuthComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,

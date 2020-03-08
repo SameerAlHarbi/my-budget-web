@@ -1,5 +1,10 @@
 export interface UserModel {
+  isAdmin: boolean;
   userName: string;
   email: string;
-  password: String;
+}
+
+export interface AuthResponseData {
+  user: UserModel;
+  token: string;
 }
