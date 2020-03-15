@@ -2,9 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { BeneficiariesComponent } from './beneficiaries/beneficiaries.component';
-import { ErrorPageComponent } from './error-page/error-page.component';
 import { RelationsComponent } from './relations/relations.component';
-import { BanksComponent } from './banks/banks.component';
 import { AboutComponent } from './about/about.component';
 import { AuthComponent } from './auth/auth.component';
 
@@ -14,7 +12,7 @@ const routes: Routes = [
   {path:'beneficiaries', component: BeneficiariesComponent},
   {path:'relations', component: RelationsComponent},
   {path:'about', component: AboutComponent},
-  {path:'auth', component: AuthComponent},
+  
   // {path: 'not-found', component: ErrorPageComponent
   //   , data: { errorType: 'not found', errorCode: 404, errorMessage: 'Page not found!'}},
   // {path: '**', redirectTo: 'not-found'}

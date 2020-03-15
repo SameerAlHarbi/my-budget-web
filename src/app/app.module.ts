@@ -14,11 +14,12 @@ import { ContactComponent } from './contact/contact.component';
 import { BeneficiariesComponent } from './beneficiaries/beneficiaries.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { RelationsComponent } from './relations/relations.component';
-import { AuthInterceptorService } from './banks/auth-interceptor.service';
 import { LoggingInterceptorService } from './banks/logging-interceptor.service';
-import { AuthComponent } from './auth/auth.component';
+
 import { BanksModule } from './banks/banks.module';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
+import { AuthInterceptorService } from './auth/auth-interceptor.service';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,6 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
     BeneficiariesComponent,
     ErrorPageComponent,
     RelationsComponent,
-    AuthComponent,
     LoadingSpinnerComponent
   ],
   imports: [
@@ -41,6 +41,7 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
     AppRoutingModule,
     HttpClientModule,
     BanksModule,
+    AuthModule
   ],
   providers: [
     {
